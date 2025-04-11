@@ -40,7 +40,7 @@ public class Dashboard extends JFrame {
        JMenuItem addRoom=new JMenuItem("ADD ROOMS");
        admin.add(addRoom);
        JMenuItem addDriver=new JMenuItem("ADD DRIVER");
-       admin.add(addDriver); 
+       admin.add(addDriver);
 
        setVisible(true);
 
