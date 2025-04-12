@@ -115,9 +115,31 @@ public class AddEmployee extends JFrame implements ActionListener {
         String adhar=adhar_t.getText();
 
         String gender=null;
-
+//Validation Validation Validation Name
         if(name.equals("")){
             JOptionPane.showMessageDialog(null,"name cannot be empty");
+            return;
+        } else if (!name.matches("[a-zA-Z\\s]+")) {
+            JOptionPane.showMessageDialog(null,"NAME MUST  CONTAIN ONLY LETTER AND SPACES");
+        }
+//AGE
+        if(age.equals("")){
+            JOptionPane.showMessageDialog(null,"AGE CANNOT BE NULL");
+            return;
+        }
+        try{
+            int ageValue=Integer.parseInt(age);
+            if(ageValue<18 || ageValue>80){
+                JOptionPane.showMessageDialog(null,"AGE MUST BE BETWEEN 18-80");
+                return;
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"ENTER A VALID AGE");
+            return;
+        }
+// Select Gender
+        if((!male.isSelected()) && (!female.isSelected())){
+            JOptionPane.showMessageDialog(null,"SELECT YOUR GENDER");
             return;
         }
         if(male.isSelected()){
@@ -128,6 +150,48 @@ public class AddEmployee extends JFrame implements ActionListener {
         }
 
         String job=(String) cbjob.getSelectedItem();
+//Salary
+        if(salery.equals("")){
+            JOptionPane.showMessageDialog(null,"ENTER THE EMPLOYEE SALERY");
+            return;
+        }
+        try{
+            int saleryVal=Integer.parseInt(salery);
+            if(saleryVal<0){
+                JOptionPane.showMessageDialog(null,"ENTER A VALID SALERY");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"ENTER A VALID SALERY");
+            return;
+        }
+//PHONE
+        if (phone.equals("")) {
+            JOptionPane.showMessageDialog(null, "ENTER YOUR PHONE NUMBER");
+            return;
+        }
+
+// Check if it's a valid Indian number (starts with 6-9 and is 10 digits)
+        if (!phone.matches("^[6-9]\\d{9}$")) {
+            JOptionPane.showMessageDialog(null, "ENTER A VALID 10-DIGIT INDIAN PHONE NUMBER");
+            return;
+        }
+//Email Validation
+        if(email.equals("")){
+            JOptionPane.showMessageDialog(null,"ENTER A VALID EMAIL");
+            return;
+        }
+        if(!email.matches("^[A-Za-z0-9+_.-]+@gmail\\.com$")){
+            JOptionPane.showMessageDialog(null,"ENTER A VALID EMAIL");
+            return;
+        }
+//AADHAR VALIDATION
+        if(adhar.equals("")){
+            JOptionPane.showMessageDialog(null,"ENTER A VALID ADHAR NUMBER");
+        }
+        if (!adhar.matches("\\d{12}")) {
+            JOptionPane.showMessageDialog(null, "ADHAR NUMBER MUST BE EXACTLY 12 DIGITS AND DIGITS ONLY");
+            return;
+        }
         try{
             Conn c=new Conn();
             String query="insert into employee values('"+name+"','"+age+"','"+salery+"','"+email+"','"+phone+"','"+adhar+"','"+gender+"','"+job+"')";
