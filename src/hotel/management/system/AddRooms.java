@@ -10,12 +10,12 @@ public class AddRooms extends JFrame implements ActionListener {
     JTextField tfroom,tfprice;
     JComboBox availableCombo,cleanCombo,bedCombo;
     AddRooms(){
-     setBounds(330,200,940,470);
+     setBounds(200,200,940,470);
      setLayout(null);
      getContentPane().setBackground(Color.WHITE);
 
 
-     JLabel heading=new JLabel("HEADING");
+     JLabel heading=new JLabel("ADD ROOMS");
      heading.setFont(new Font("TAHOMA",Font.BOLD,18));
      heading.setBounds(150,20,200,20);
      add(heading);
@@ -111,6 +111,6 @@ public class AddRooms extends JFrame implements ActionListener {
      }
     }
     public static void main(String[]agrs){
-    new AddRooms();
+    new AddDrivers();
     }
 }

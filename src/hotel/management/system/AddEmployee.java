@@ -15,7 +15,7 @@ public class AddEmployee extends JFrame implements ActionListener {
     AddEmployee(){
         setLayout(null);
       setSize(1000,600);
-      setLocation(100,100);
+      setLocation(200,200);
      getContentPane().setBackground(Color.WHITE);
 
      JLabel addE=new JLabel("ADD EMPLOYEE");
