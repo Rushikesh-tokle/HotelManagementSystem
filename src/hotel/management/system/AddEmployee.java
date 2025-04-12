@@ -14,13 +14,13 @@ public class AddEmployee extends JFrame implements ActionListener {
     JComboBox cbjob;
     AddEmployee(){
         setLayout(null);
-      setSize(1000,600);
+      setSize(800,500);
       setLocation(200,200);
      getContentPane().setBackground(Color.WHITE);
 
      JLabel addE=new JLabel("ADD EMPLOYEE");
-     addE.setBounds(365,10,500,45);
-     addE.setFont(new Font("Tahoma",Font.BOLD,44));
+     addE.setBounds(105,10,500,45);
+     addE.setFont(new Font("Tahoma",Font.BOLD,20));
      add(addE);
 
       JLabel name=new JLabel("NAME");
