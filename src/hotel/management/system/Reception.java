@@ -7,13 +7,15 @@ import java.awt.event.ActionListener;
 
 public class Reception extends JFrame implements ActionListener {
 
+    JButton newCustForm;
     Reception(){
         setLayout(null);
         setBounds(180,180,1050,630);
         getContentPane().setBackground(Color.WHITE);
 
-        JButton newCustForm=new JButton("NEW CUSTOMER FORM");
+        newCustForm=new JButton("NEW CUSTOMER FORM");
         newCustForm.setBounds(50,25,200,35);
+        newCustForm.addActionListener(this);
         newCustForm.setBackground(Color.BLACK);
         newCustForm.setForeground(Color.WHITE);
         add(newCustForm);
@@ -94,7 +96,9 @@ public class Reception extends JFrame implements ActionListener {
         setVisible(true);
     }
     public void actionPerformed(ActionEvent ae){
-
+       if(ae.getSource()==newCustForm){
+           new AddCustomer();
+       }
     }
     public static void main(String[]args){
       new Reception();

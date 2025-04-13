@@ -111,6 +111,6 @@ public class AddRooms extends JFrame implements ActionListener {
      }
     }
     public static void main(String[]agrs){
-    new AddDrivers();
+    new AddRooms();
     }
 }
