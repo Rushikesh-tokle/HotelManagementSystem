@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Reception extends JFrame implements ActionListener {
 
-    JButton newCustForm;
+    JButton newCustForm,rooms;
     Reception(){
         setLayout(null);
         setBounds(180,180,1050,630);
@@ -20,8 +20,9 @@ public class Reception extends JFrame implements ActionListener {
         newCustForm.setForeground(Color.WHITE);
         add(newCustForm);
 
-        JButton rooms=new JButton("ROOMS");
+         rooms=new JButton("ROOMS");
         rooms.setBounds(50,70,200,35);
+        rooms.addActionListener(this);
         rooms.setBackground(Color.BLACK);
         rooms.setForeground(Color.WHITE);
         add(rooms);
@@ -98,6 +99,8 @@ public class Reception extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
        if(ae.getSource()==newCustForm){
            new AddCustomer();
+       } else if (ae.getSource()==rooms) {
+           new AllRooms();
        }
     }
     public static void main(String[]args){
