@@ -7,36 +7,36 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import net.proteanit.sql.*;
 
-public class EmployeeInfo extends JFrame implements ActionListener {
+public class CustomerInfo extends JFrame implements ActionListener {
     JTable table;
     JButton back;
-    EmployeeInfo(){
+    CustomerInfo(){
         setLayout(null);
         setBounds(300,200,1050,600);
         getContentPane().setBackground(Color.WHITE);
 
-        JLabel l1=new JLabel("name");
+        JLabel l1=new JLabel("id type");
         l1.setBounds(40,10,110,20);
         add(l1);
-        JLabel l2=new JLabel("age");
-        l2.setBounds(150,10,40,20);
+        JLabel l2=new JLabel("id number");
+        l2.setBounds(150,10,100,20);
         add(l2);
-        JLabel l3=new JLabel("salery");
+        JLabel l3=new JLabel("name");
         l3.setBounds(280,10,80,20);
         add(l3);
-        JLabel l4=new JLabel("email");
+        JLabel l4=new JLabel("gender");
         l4.setBounds(400,10,250,20);
         add(l4);
-        JLabel l5=new JLabel("phone");
+        JLabel l5=new JLabel("country");
         l5.setBounds(510,10,150,20);
         add(l5);
-        JLabel l6=new JLabel("adhar");
+        JLabel l6=new JLabel("room");
         l6.setBounds(635,10,200,20);
         add(l6);
-        JLabel l7=new JLabel("gender");
+        JLabel l7=new JLabel("time");
         l7.setBounds(760,10,100,20);
         add(l7);
-        JLabel l8=new JLabel("job role");
+        JLabel l8=new JLabel("deposit");
         l8.setBounds(900,10,150,20);
         add(l8);
 
@@ -46,7 +46,7 @@ public class EmployeeInfo extends JFrame implements ActionListener {
 
         try{
             Conn c=new Conn();
-            String query="select * from employee";
+            String query="select * from customer";
             ResultSet rs=c.s.executeQuery(query);
             table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch (Exception e){
@@ -69,6 +69,6 @@ public class EmployeeInfo extends JFrame implements ActionListener {
         }
     }
     public static void main(String[] args) {
-        new EmployeeInfo();
+        new CustomerInfo();
     }
 }

@@ -116,9 +116,9 @@ public class Reception extends JFrame implements ActionListener {
        } else if (ae.getSource()==allEmployees) {
            new ManagerInfo();
        } else if (ae.getSource()==customerInfo) {
-           new Department();
+           new CustomerInfo();
        } else if (ae.getSource()==managerInfo) {
-           new Department();
+           new ManagerInfo();
        } else if (ae.getSource()==checkout) {
            new Department();
        } else if (ae.getSource()==updateStatus) {
