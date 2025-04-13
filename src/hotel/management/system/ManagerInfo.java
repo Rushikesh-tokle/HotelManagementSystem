@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import net.proteanit.sql.*;
 
-public class EmployeeInfo extends JFrame implements ActionListener {
+public class ManagerInfo extends JFrame implements ActionListener {
     JTable table;
     JButton back;
-    EmployeeInfo(){
+    ManagerInfo(){
         setLayout(null);
         setBounds(300,200,1050,600);
         getContentPane().setBackground(Color.WHITE);
@@ -46,7 +46,7 @@ public class EmployeeInfo extends JFrame implements ActionListener {
 
         try{
             Conn c=new Conn();
-            String query="select * from employee";
+            String query="select * from employee where job='MANAGER'";
             ResultSet rs=c.s.executeQuery(query);
             table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch (Exception e){
