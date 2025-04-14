@@ -108,26 +108,35 @@ public class Reception extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae){
        if(ae.getSource()==newCustForm){
+           setVisible(false);
            new AddCustomer();
        } else if (ae.getSource()==rooms) {
+           setVisible(false);
            new AllRooms();
        } else if (ae.getSource()==department) {
+           setVisible(false);
            new Department();
        } else if (ae.getSource()==allEmployees) {
-           new ManagerInfo();
+           setVisible(false);
+           new EmployeeInfo();
        } else if (ae.getSource()==customerInfo) {
+           setVisible(false);
            new CustomerInfo();
        } else if (ae.getSource()==managerInfo) {
+           setVisible(false);
            new ManagerInfo();
        } else if (ae.getSource()==checkout) {
            new Department();
        } else if (ae.getSource()==updateStatus) {
-           new Department();
+           setVisible(false);
+           new UpdateCheck();
        } else if (ae.getSource()==updateRoomStatus) {
-           new Department();
+           setVisible(false);
+           new UpdateRoom();
        } else if (ae.getSource()==pickupServices) {
            new Department();
        } else if (ae.getSource()==searchRooms) {
+           setVisible(false);
            new SearchRoom();
        }else {
            new Department();
