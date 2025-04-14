@@ -126,7 +126,8 @@ public class Reception extends JFrame implements ActionListener {
            setVisible(false);
            new ManagerInfo();
        } else if (ae.getSource()==checkout) {
-           new Department();
+           setVisible(false);
+           new CheckOut();
        } else if (ae.getSource()==updateStatus) {
            setVisible(false);
            new UpdateCheck();
@@ -140,7 +141,9 @@ public class Reception extends JFrame implements ActionListener {
            setVisible(false);
            new SearchRoom();
        }else {
-           new Department();
+           JOptionPane.showMessageDialog(null,"LOGOUT SUCCESSFUL");
+           setVisible(false);
+           new Login();
        }
     }
     public static void main(String[]args){
